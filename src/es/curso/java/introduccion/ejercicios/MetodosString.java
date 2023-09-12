@@ -1,4 +1,4 @@
-package es.curso.java.introduccion;
+package es.curso.java.introduccion.ejercicios;
 
 public class MetodosString {
 
