@@ -3,8 +3,8 @@ package es.curso.java.introduccion.funciones;
 public class EjercicioFunciones {
 
 	public static void main(String[] args) {
-     
-		EjercicioFunciones.pintaTablaMultiplicar(1);
+      velVehiculo(9,7);
+	pintaTablaMultiplicar(1);
 		{System.out.println("");}
 		
 		String año= "1994";
@@ -16,8 +16,9 @@ public class EjercicioFunciones {
 
 	// int calculaEdad (String anioNacimiento)
 	public static int calculaEdad(String anioNacimiento) {
+		int edad= 0;
 		int anio = Integer.parseInt(anioNacimiento);
-		int edad = 2023 - anio;
+		edad = 2023 - anio;
 		return edad;
 	}
 
@@ -40,4 +41,8 @@ public class EjercicioFunciones {
 
 		// #Facil, devolver el texto tantas veces como indique el numRepeticiones
 	}
+	//método que le pasamos el espacio en km recorrido por un vehiculo y el tiempo en minutos en que ha recorrido ese espacio y nos dice la velocidad que lleva el vehiculo
+	public static void velVehiculo(double distancia, int tiempo) {System.out.println("velocidad:"+distancia/tiempo);}  
+	
+	
 }
