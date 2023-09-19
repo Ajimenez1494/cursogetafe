@@ -32,18 +32,33 @@ public class Utilidades {
          {     
         	 int opcion=0;
      		 {
-     		 menu = "1. Opcion1\n2. Opcion2\n3. Opcion3\n4. Opcion4\n5. Salir";
-     			System.out.println(menu);
+     		// menu = "1. Opcion1\n2. Opcion2\n3. Opcion3\n4. Opcion4\n5. Salir";
+     			System.out.println(menu+ "\n");
      			System.out.println("Selecciona una opcion");
-     			Scanner scan = new Scanner(System.in);
-     			opcion = scan.nextInt();
+     			opcion=pideDatoNumerico(menu);
      			System.out.println("Opcion seleccionada " + opcion);
      		}
      		   // String seleccion=Integer.toString(opcion);
 
         	 return opcion ;      }
-         public static void pintarMenu (String[] menu) {
-        	 
-         }
+
+     	public static int pintarMenu(String menu, String pregunta, String caracterSeparacion) {
+     		
+     		
+     		return pintarMenu(menu.split(caracterSeparacion),pregunta);
+     	}
+     	
+     	
+     	public static int pintarMenu(String[] menu, String pregunta) {
+     		for (String opcion : menu) {
+     			System.out.println(opcion);
+     		}
+     		//Pido la opción del menú
+     		int opcion = pideDatoNumerico(pregunta);
+     		
+     		return opcion;
+     	}
+     		 
+         
 
 }
