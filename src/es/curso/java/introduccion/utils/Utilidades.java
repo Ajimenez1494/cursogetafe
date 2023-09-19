@@ -33,7 +33,7 @@ public class Utilidades {
         	 int opcion=0;
      		 {
      		// menu = "1. Opcion1\n2. Opcion2\n3. Opcion3\n4. Opcion4\n5. Salir";
-     			System.out.println(menu+ "\n");
+     			//System.out.println(menu+ "\n");
      			System.out.println("Selecciona una opcion");
      			opcion=pideDatoNumerico(menu);
      			System.out.println("Opcion seleccionada " + opcion);
