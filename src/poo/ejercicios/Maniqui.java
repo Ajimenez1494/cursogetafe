@@ -2,9 +2,9 @@ package poo.ejercicios;
 
 public class Maniqui {
 	 private long id;
-     private Vestido vestido1= new Vestido();
-     private Pantalon pantalon1= new Pantalon();
-     private Camisa camisa1= new Camisa();
+     private Vestido vestido1;
+     private Pantalon pantalon1;
+     private Camisa camisa1;
 	
      
      public Maniqui(long id) {
@@ -70,8 +70,8 @@ public class Maniqui {
 
 	 public void vestir (Pantalon pantalon, Camisa camisa) {
 		desvestir();
-		this.pantalon1 = pantalon1;
-		this.camisa1 = camisa1;
+		this.pantalon1 = pantalon;
+		this.camisa1 = camisa;
 	}
         public void vestir (Vestido vestido) {
 		desvestir();
