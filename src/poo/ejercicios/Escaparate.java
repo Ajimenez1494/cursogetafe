@@ -30,13 +30,14 @@ public class Escaparate {
 		for (Maniqui maniqui : maniquis) {
 			
 			System.out.println("El maniqui tiene el id" + maniqui.getId() );
+			if (maniqui.getCamisa1() != null) {
 			System.out.println(maniqui.getCamisa1().getPrecio() );
 			System.out.println(maniqui.getPantalon1().getPrecio());
 			System.out.println("El maniqui tiene el id" + maniqui.getId() );
 
 			System.out.println(maniqui.getVestido1().getPrecio());
 
-		}
+		}}
     	}
     	public void mostrarPrecio(Maniqui...maniquis) {
     		
