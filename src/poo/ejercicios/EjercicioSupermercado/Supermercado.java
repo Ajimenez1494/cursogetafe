@@ -1,4 +1,4 @@
-package poo.ejercicios.EjercicioSupermercado;
+ package poo.ejercicios.EjercicioSupermercado;
 
 public class Supermercado {
 	private String nombre;
