@@ -11,7 +11,7 @@ public class EmpleadosHospital extends Persona {
 	public void setturno(String turno) {
 		this.turno = turno;
 	}
-	public void Fichar() {
+	public void fichar(EmpleadosHospital empleados) {
 		System.out.println("El empleado"+ getNombre() + "esta fichando");
 
 	}

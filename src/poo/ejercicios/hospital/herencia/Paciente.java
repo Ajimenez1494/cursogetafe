@@ -17,7 +17,7 @@ public class Paciente extends Persona {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Paciente(int id, String nombre, int edad) {
+	public Paciente(int id, String nombre, int edad, String [] sintomas) {
 		super(id, nombre, edad);
 		// TODO Auto-generated constructor stub
 	}
