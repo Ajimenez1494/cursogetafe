@@ -15,4 +15,11 @@ public class Persona {
 		System.out.println("La persona con nombre"+nombre+ " y edad" + edad + "esta corriendo");
 		
 	}
+
+
+
+	public char[] getNombre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
