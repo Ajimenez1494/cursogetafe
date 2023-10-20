@@ -62,7 +62,6 @@ public class Nave extends VehiculoGuerra {
 		// Calcular el ataque total según la fórmula
 		double ataqueTotal = ataqueTotalNave + ataqueTotalGuerreros * (random.nextDouble() * 0.5);
 
-		// Convertir el resultado a un entero si es necesario
 		return (int) ataqueTotal;
 	}
 
@@ -74,14 +73,13 @@ public class Nave extends VehiculoGuerra {
 
 		// Calcular la defensa de VehiculoGuerra
 		int defensaNave = getDefensa();
-		double factorDefensaNave = random.nextDouble(); // Número aleatorio entre 0 y 1
+		double factorDefensaNave = random.nextDouble(); 
 		double defensaTotalNave = defensaNave * factorDefensaNave;
 
 		// Calcular la suma de la resistencia de todos los Guerreros embarcados
 		int resistenciaTotalGuerreros = 0;
 		for (Guerrero guerrero : getGuerreros()) {
-			resistenciaTotalGuerreros += guerrero.getResistencia(); // Asumiendo que los guerreros tienen un atributo
-																	// "resistencia"
+			resistenciaTotalGuerreros += guerrero.getResistencia(); 
 		}
 
 		// Calcular la defensa total según la fórmula
@@ -90,7 +88,7 @@ public class Nave extends VehiculoGuerra {
 		// Reducir el daño recibido por la defensa
 		int dañoRecibido = ataque - (int) defensaTotal;
 		if (dañoRecibido < 0) {
-			dañoRecibido = 0; // No puede ser un número negativo
+			dañoRecibido = 0; 
 		}
 
 		return dañoRecibido;

@@ -14,7 +14,8 @@ public class Guerra {
 	public void iniciarGuerra() throws LimiteValoresException, UnidadesPermitidasExcepcion {
 		Nave nave1 = new Nave("nave1");
 		Nave nave2 = new Nave("nave2");
-		construyeVehiculos(nave1, nave2);
+		construyeVehiculos(nave1);
+		construyeVehiculos(nave2);
 
 		while (nave1.getPuntosVida() > 0 && nave2.getPuntosVida() > 0) {
 			// Turno de la Nave1
@@ -36,38 +37,25 @@ public class Guerra {
 		}
 	}
 
-	VehiculoGuerra construyeVehiculos(Nave nave1, Nave nave2) throws LimiteValoresException {
+	VehiculoGuerra construyeVehiculos(Nave nave1) throws LimiteValoresException {
 
 		Guerrero guerrero1 = new Guerrero("Guerrero1", "Tipo1", 6, 4);
 		Guerrero guerrero2 = new Guerrero("Guerrero2", "Tipo1", 3, 7);
-		Guerrero guerrero3 = new Guerrero("Guerrero3", "Tipo1", 9, 1);
-		Guerrero guerrero4 = new Guerrero("Guerrero4", "Tipo1", 6, 4);
-		// Embárcalos en la nave
+		Guerrero guerrero3 = new Guerrero("Guerrero3", "Tipo1", 4, 6);
+		Guerrero guerrero4 = new Guerrero("Guerrero4", "Tipo1", 5, 5);
+		
 		try {
 			nave1.embarcar(guerrero1);
 			nave1.embarcar(guerrero2);
-			nave2.embarcar(guerrero3);
-			nave2.embarcar(guerrero4);
+			nave1.embarcar(guerrero3);
+			nave1.embarcar(guerrero4);
 		} catch (UnidadesPermitidasExcepcion | LimiteValoresException e) {
-			// Manejar excepciones si es necesario
+			
 		}
 
-		return nave1; // Devuelve la nave construida
+		return nave1; 
 	}
 
-//       VehiculoGuerra vehiculo = null;
-//       vehiculo.getGuerreros();
-//       	Guerrero guerrero1= new Guerrero(null, null, 0, 0);
-//		Guerrero guerrero2= new Guerrero(null, null, 0, 0);
-//		Guerrero guerrero3= new Guerrero(null, null, 0, 0);
-//		Guerrero guerrero4= new Guerrero(null, null, 0, 0);
-//		List<Guerrero> guerreros = new ArrayList<Guerrero>();
-//		vehiculo.embarcar(guerrero1);
-//		vehiculo.embarcar(guerrero2);
-//		vehiculo.embarcar(guerrero3);
-//		vehiculo.embarcar(guerrero4);
-//       
-//		return vehiculo;
 
 	VehiculoGuerra vehiculosBasedeDatos() {
 
