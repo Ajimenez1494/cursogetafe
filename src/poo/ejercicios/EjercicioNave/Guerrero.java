@@ -56,9 +56,15 @@ public class Guerrero {
 	public void setResistencia(int resistencia) {
 		this.resistencia = resistencia;
 	}
+
 	public String toString() {
 		return "Guerrero [" + (nombre != null ? "nombre=" + nombre + ", " : "")
 				+ (tipo != null ? "tipo=" + tipo + ", " : "") + "fuerza=" + fuerza + ", resistencia=" + resistencia
 				+ "]";
+	}
+
+	public int getAtaque() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

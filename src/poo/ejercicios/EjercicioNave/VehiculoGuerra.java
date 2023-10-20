@@ -10,44 +10,41 @@ public abstract class VehiculoGuerra implements Tripulable {
 	private String nombre;
 	private List<Guerrero> guerreros = new ArrayList<Guerrero>();
 
-	public void embarcar(Guerrero guerreros) throws UnidadesPermitidasExcepcion {
-		if (this.guerreros.size()<10) {
-			this.guerreros.add(guerreros);
-		}else {
-			throw new UnidadesPermitidasExcepcion("Has superado el numero de unidades máximo establecido en 10"); 
+	public void embarcar(List<Guerrero> guerreros) throws UnidadesPermitidasExcepcion, LimiteValoresException {
+		if (this.guerreros.size() < 10) {
+			this.guerreros.add((Guerrero) guerreros);
+		} else {
+			throw new UnidadesPermitidasExcepcion("Has superado el numero de unidades máximo establecido en 10");
 		}
 
 	}
 
-   
-	private VehiculoGuerra (int ataque, int defensa) throws LimiteValoresException {
-		if (ataque+defensa>10) {
-			throw new LimiteValoresException(
-					"La suma del ataque "
-					+ "y defensa de la nave no puede ser superior a 10");
-		}else {
+	private VehiculoGuerra(int ataque, int defensa) throws LimiteValoresException {
+		if (ataque + defensa > 10) {
+			throw new LimiteValoresException("La suma del ataque " + "y defensa de la nave no puede ser superior a 10");
+		} else {
 			this.ataque = ataque;
 			this.defensa = defensa;
 		}
 	}
-	
-	public VehiculoGuerra(String nombre) throws LimiteValoresException{
-		this(5,5);
+
+	public VehiculoGuerra(String nombre) throws LimiteValoresException {
+		this(5, 5);
 		this.nombre = nombre;
 
 	}
-	public VehiculoGuerra(String nombre, int ataque, int defensa) throws LimiteValoresException{
-		this(ataque,defensa);
+
+	public VehiculoGuerra(String nombre, int ataque, int defensa) throws LimiteValoresException {
+		this(ataque, defensa);
 		this.nombre = nombre;
 	}
-	
-	public VehiculoGuerra(String nombre, int ataque, int defensa, int puntosVida) throws LimiteValoresException{
-		this(ataque,defensa);
+
+	public VehiculoGuerra(String nombre, int ataque, int defensa, int puntosVida) throws LimiteValoresException {
+		this(ataque, defensa);
 		this.nombre = nombre;
 		this.puntosVida = puntosVida;
 	}
 
-	
 	public int getPuntosVida() {
 		return puntosVida;
 	}
