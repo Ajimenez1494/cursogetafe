@@ -10,7 +10,10 @@ public class Guerra {
 		Guerra guerra1 = new Guerra();
 		guerra1.iniciarGuerra();
 	}
-
+    
+	
+	
+	
 	public void iniciarGuerra() throws LimiteValoresException, UnidadesPermitidasExcepcion {
 		Nave nave1 = new Nave("nave1");
 		Nave nave2 = new Nave("nave2");
