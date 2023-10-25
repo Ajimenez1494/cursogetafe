@@ -1,7 +1,13 @@
 package poo.ejercicios.EjercicioNave;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import es.curso.java.bbdd.UtilidadesBasesDatos;
 
 public class Guerra {
 
@@ -9,6 +15,20 @@ public class Guerra {
 		// TODO Auto-generated method stub
 		Guerra guerra1 = new Guerra();
 		guerra1.iniciarGuerra();
+		
+		UtilidadesBasesDatos utilidadesBasesDatos = new UtilidadesBasesDatos();
+		Connection connection=utilidadesBasesDatos.conectaBasesDatos();
+		 Statement stmt = null;
+		 ResultSet rs = null;
+		 try {
+			stmt = connection.createStatement();
+				rs = stmt.executeQuery("SELECT * FROM TB_FACILITIES");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
     
 	

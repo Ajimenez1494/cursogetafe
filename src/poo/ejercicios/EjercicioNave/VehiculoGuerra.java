@@ -9,6 +9,9 @@ public abstract class VehiculoGuerra implements Tripulable {
 	private int defensa = 5;
 	private String nombre;
 	private List<Guerrero> guerreros = new ArrayList<Guerrero>();
+	
+	
+	
 
 	public void embarcar(List<Guerrero> guerreros) throws UnidadesPermitidasExcepcion, LimiteValoresException {
 		if (this.guerreros.size() < 10) {

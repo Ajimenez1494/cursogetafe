@@ -1,0 +1,5 @@
+
+INSERT INTO TB_GUERRERO(nombre, vehiculo_id,id, fuerza, resistencia) VALUES ("Guerrero1",1,1, 5,5);
+
+
+SELECT * FROM TB_GUERRERO;
