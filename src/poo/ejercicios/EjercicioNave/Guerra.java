@@ -5,7 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import es.curso.java.bbdd.UtilidadesBasesDatos;
 
@@ -22,7 +24,20 @@ public class Guerra {
 		 ResultSet rs = null;
 		 try {
 			stmt = connection.createStatement();
-				rs = stmt.executeQuery("SELECT * FROM TB_FACILITIES");
+				rs = stmt.executeQuery("SELECT * FROM TB_VEHICULO_GUERRA");
+				
+				
+				Set<Nave> nave = new LinkedHashSet<Nave>();
+				while (rs.next()) {
+					long id = rs.getInt("id");
+//					
+//					Nave nave = new Nave(rs.getNombre("nombre"),rs.getId("id"),
+//							rs.getAtaque("ataque"),rs.getDefensa("defensa"));
+//				
+//					nave.add(nave);
+//					
+				}
+			System.out.println(nave.size());
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
