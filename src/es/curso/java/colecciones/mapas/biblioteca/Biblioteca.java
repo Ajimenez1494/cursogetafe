@@ -26,7 +26,17 @@ public class Biblioteca extends Libro {
     	return libro;
     };
     
-    public void devolverLibro(Libro libro) {};
+    public Biblioteca(String titulo, String autor, int copiasDis, String nombreBiblioteca, Libro libro,
+			Map<String, Libro> librosMap) {
+		super(titulo, autor, copiasDis);
+		this.nombreBiblioteca = nombreBiblioteca;
+		this.libro = libro;
+		this.librosMap = librosMap;
+	}
+
+
+
+	public void devolverLibro(Libro libro) {};
     
     
     

@@ -1,0 +1,51 @@
+ALTER TABLE TB_DIRECCION ADD Localidad VARCHAR(50);
+
+CREATE TABLE TB_DIRECCION ( 
+ id INTEGER NOT NULL PRIMARY KEY,
+ Calle VARCHAR (50),
+ Numero INTEGER,
+ Cod_postal INTEGER
+);
+
+
+CREATE TABLE TB_BIBLIOTECA (    
+    id INTEGER NOT NULL PRIMARY KEY,
+    direccion_id INTEGER,
+    nombre VARCHAR (20) NOT NULL,
+    FOREIGN KEY (direccion_id) REFERENCES TB_DIRECCION(id)
+);
+
+CREATE TABLE TB_LIBRO(
+ titulo VARCHAR(50) NOT NULL,
+ autor VARCHAR(50) NOT NULL,
+ ISBN INTEGER NOT NULL, 
+ num_copias INTEGER,
+ id INTEGER NOT NULL PRIMARY KEY,
+ biblioteca_id INTEGER,
+ FOREIGN KEY (biblioteca_id) REFERENCES TB_BIBLIOTECA (id)
+);
+
+INSERT into TB_DIRECCION (id, Calle, Numero, Cod_postal, Localidad) values (1, 'Callao', 32, 28945, 'Fuenlabrada');
+INSERT into TB_DIRECCION (id, Calle, Numero, Cod_postal, Localidad) values (2, 'Lima', 33, 28562, 'Leganes');
+INSERT into TB_DIRECCION (id, Calle, Numero, Cod_postal, Localidad) values (3, 'Brasil', 34, 28562, 'Parla');
+INSERT into TB_DIRECCION (id, Calle, Numero, Cod_postal, Localidad) values (4, 'Leganes', 35, 28855, 'Getafe');
+INSERT into TB_DIRECCION (id, Calle, Numero, Cod_postal, Localidad) values (5, 'Habana', 36, 28468, 'Mostoles');
+
+SELECT * from TB_DIRECCION;
+
+INSERT INTO TB_BIBLIOTECA(id,direccion_id, nombre) values (1,1,'Tomas y Valiente');
+INSERT INTO TB_BIBLIOTECA(id,direccion_id, nombre) values (2,2,'Julio Caro Baroja');
+INSERT INTO TB_BIBLIOTECA(id,direccion_id, nombre) values (3,3,'Gloria Fuertes');
+SELECT * from TB_BIBLIOTECA;
+
+INSERT INTO TB_LIBRO(titulo,autor,isbn,num_copias,id,biblioteca_id)  VALUES('libro1','autor1',1111,3,1,1);
+INSERT INTO TB_LIBRO(titulo,autor,isbn,num_copias,id,biblioteca_id)  VALUES('libro2','autor2',2222,3,2,2);
+INSERT INTO TB_LIBRO(titulo,autor,isbn,num_copias,id,biblioteca_id)  VALUES('libro3','autor3',3333,3,3,3);
+INSERT INTO TB_LIBRO(titulo,autor,isbn,num_copias,id,biblioteca_id)  VALUES('libro4','autor4',4444,3,4,4);
+SELECT * from TB_LIBRO;
+
+
+
+
+
+
