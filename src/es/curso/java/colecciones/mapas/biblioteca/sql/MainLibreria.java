@@ -20,7 +20,7 @@ public class MainLibreria {
 
        Connection connection=UtilidadesBasesDatos.conectaBasesDatos();
 
-		Biblioteca biblioteca = new Biblioteca("Biblioteca1");
+		BibliotecaSql biblioteca = new BibliotecaSql("Biblioteca1");
 		int opcion=0;
 		int opcion2= 0;
 		do {
@@ -110,7 +110,7 @@ public class MainLibreria {
 		
 	}
 	
-	public void agregarLibro(Biblioteca biblioteca) {
+	public void agregarLibro(BibliotecaSql biblioteca) {
 		
 		String titulo = Utilidades.pideDatoTexto("Introduce Titulo");
 		String autor = Utilidades.pideDatoTexto("Introduce Autor");
@@ -121,7 +121,7 @@ public class MainLibreria {
 	}
 	
 	
-	public void prestarLibro(Biblioteca biblioteca) {
+	public void prestarLibro(BibliotecaSql biblioteca) {
 		String titulo = Utilidades.pideDatoTexto("Introduce Titulo del libro");
 		if(biblioteca.existeLibro(titulo) && biblioteca.estaDisponible(titulo)) {
 			biblioteca.prestarLibro(titulo);
@@ -131,7 +131,7 @@ public class MainLibreria {
 	
 	}
 	
-	public void devolverLibro(Biblioteca biblioteca) {
+	public void devolverLibro(BibliotecaSql biblioteca) {
 		String titulo = Utilidades.pideDatoTexto("Introduce Titulo del libro");
 		if(biblioteca.existeLibro(titulo)) {
 			biblioteca.devolverLibro(titulo);

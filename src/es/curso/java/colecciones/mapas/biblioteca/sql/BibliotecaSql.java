@@ -4,18 +4,18 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Biblioteca {
+public class BibliotecaSql {
 	
 	private String nombre;
 	private Map<String, Libro> catalogo;
 	
-	public Biblioteca(String nombre, Map<String, Libro> catalogo) {
+	public BibliotecaSql(String nombre, Map<String, Libro> catalogo) {
 		super();
 		this.nombre = nombre;
 		this.catalogo = catalogo;
 	}
 	
-	public Biblioteca(String nombre) {
+	public BibliotecaSql(String nombre) {
 		super();
 		this.nombre = nombre;
 		catalogo = new HashMap<String, Libro>();
