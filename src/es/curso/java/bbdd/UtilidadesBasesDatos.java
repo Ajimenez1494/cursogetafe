@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class UtilidadesBasesDatos {
 
-	public Connection conectaBasesDatos() {
+	public static Connection conectaBasesDatos() {
 		String url = "jdbc:mysql://localhost:3306/curso?serverTimezone=Europe/Madrid";
 		String username = "root";
 		String password = "password";
