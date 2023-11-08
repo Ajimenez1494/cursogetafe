@@ -16,7 +16,7 @@ public class UtilidadesBasesDatos {
 
 		try {
 			 connection = DriverManager.getConnection(url, username, password);
-		
+				System.out.println("Conexión establecida");
 		}
 
 		catch (SQLException e) {

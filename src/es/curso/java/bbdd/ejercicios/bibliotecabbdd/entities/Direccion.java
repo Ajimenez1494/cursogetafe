@@ -5,14 +5,17 @@ public class Direccion {
 	private String calle;
 	private int cod_postal;
 	private int numero;
+	private String localidad;
 	
 	
-	public Direccion(int id, String calle, int cod_postal, int numero) {
+	public Direccion(int id, String calle, int cod_postal, int numero, String localidad) {
 		super();
 		this.id = id;
 		this.calle = calle;
 		this.cod_postal = cod_postal;
 		this.numero = numero;
+		this.localidad= localidad;
+		
 	}
 
 

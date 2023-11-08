@@ -1,5 +1,7 @@
 package es.curso.java.bbdd.ejercicios.bibliotecabbdd.entities;
 
+import java.util.List;
+
 public class Biblioteca {
 	private long id;
 	private String nombre;
@@ -52,6 +54,10 @@ public class Biblioteca {
 	public String toString() {
 		return "Biblioteca [id=" + id + ", " + (nombre != null ? "nombre=" + nombre + ", " : "")
 				+ (direccion != null ? "direccion=" + direccion : "") + "]";
+	}
+	public List<Libro> getLibros() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

@@ -2,6 +2,7 @@ package es.curso.java.bbdd.ejercicios.bibliotecabbdd.entities;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -36,9 +37,55 @@ public class BibliotecaMain {
 		
 	}
 	
-	public void cargarSubmenu(Biblioteca b) {
+	public void cargarSubmenu(Biblioteca b) {   boolean salir = false;
+
+    while (!salir) {
+        int opcion = mostrarSubmenu();
+        switch (opcion) {
+            case 1:
+                // Lógica para mostrar los libros de la biblioteca
+                mostrarLibrosDeBiblioteca(b);
+                break;
+            case 2:
+                // Lógica para realizar otras operaciones relacionadas con la biblioteca
+                realizarOtrasOperaciones(b);
+                break;
+            case 3:
+                salir = true; // Salir del submenú
+                break;
+            default:
+                System.out.println("Opción no válida. Por favor, elija una opción válida.");
+        }}
+    }
+    
+    public int mostrarSubmenu(Biblioteca b) {
+        System.out.println("Menú de opciones para la biblioteca " + b.getNombre() + ":");
+        System.out.println("1. Mostrar libros de la biblioteca");
+        System.out.println("2. Realizar otras operaciones relacionadas con la biblioteca");
+        System.out.println("3. Salir");
+        
+        return Utilidades.pintarMenu("3"); // Utiliza la clase Utilidades para obtener la selección del usuario.
+    
 		
 	}
+    public void mostrarLibrosDeBiblioteca(Biblioteca b) {
+        List<Libro> libros = b.getLibros(); // Supongo que hay un método en la clase 'Biblioteca' para obtener los libros.
+
+        if (libros.isEmpty()) {
+            System.out.println("No hay libros disponibles en esta biblioteca.");
+        } else {
+            System.out.println("Libros disponibles en la biblioteca " + b.getNombre() + ":");
+            for (Libro libro : libros) {
+                System.out.println("Título: " + libro.getTitulo());
+                System.out.println("Autor: " + libro.getAutor());
+                System.out.println("ISBN: " + libro.getISBN());
+                System.out.println("Número de copias: " + libro.getNum_copias());
+                System.out.println("-----------------------------");
+            }
+        }
+    }
+    
+    
 	
 	public void cargarDatosBiblioteca () {
 		BibliotecaDAO bibliotecaDao = null;

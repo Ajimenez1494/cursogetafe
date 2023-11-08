@@ -23,21 +23,21 @@ import es.curso.java.bbdd.ejercicios.bibliotecabbdd.entities.Direccion;
 			List<Biblioteca> bibliotecas = new ArrayList<Biblioteca>();
 
 			Statement stmt = this.getConexion().createStatement();
-			String query = "SELECT biblio.id, biblio.nombre, \r\n"
-					+ "dir.numero, dir.localidad, dir.id, dir.cod_postal\r\n"
-					+ "FROM TB_BIBLIOTECA as biblio JOIN TB_DIRECCION as dir \r\n"
-					+ "ON biblio.fk_direccion = dir.id";
+			String query = "SELECT biblio.id, biblio.nombre, dir.numero, dir.localidad, dir.id, dir.cod_postal, dir.Calle AS direccion_nombre FROM TB_BIBLIOTECA as biblio JOIN TB_DIRECCION as dir ON biblio.direccion_id = dir.id";
 			
 			ResultSet rs = stmt.executeQuery(query);
 			
 			while (rs.next()) {
+				int idDire= rs.getInt("dir.id");
 				int idBiblioteca = rs.getInt("biblio.id");
 				String nombreBiblioteca = rs.getString("biblio.nombre");
-				String direccion = rs.getString("dir.direccion");
-				int codPostal = rs.getInt("dir.cod_postal");
-				int numero=rs.getInt("numero");
 
-				Direccion dire = new Direccion(idBiblioteca, direccion, codPostal, numero);
+				int codPostal = rs.getInt("dir.cod_postal");
+				String nombre = rs.getString("direccion_nombre");
+				int numero=rs.getInt("numero");
+				String localidad=rs.getString("dir.localidad");
+
+				Direccion dire = new Direccion(idDire, nombre, numero, codPostal, localidad);
 				Biblioteca biblio = new Biblioteca(idBiblioteca, nombreBiblioteca, dire);
 				
 				bibliotecas.add(biblio);

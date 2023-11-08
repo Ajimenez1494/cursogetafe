@@ -9,11 +9,11 @@ import java.sql.Statement;
 public class ConexionBaseDeDatos {
 	
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		ConexionBaseDeDatos conexion = new ConexionBaseDeDatos();
 		conexion.conecta();
 		
-	}
+	}*/
 	
 	private void conecta() {
 		String url = "jdbc:mysql://localhost:3306/curso?serverTimezone=Europe/Madrid";
@@ -29,16 +29,6 @@ public class ConexionBaseDeDatos {
 			connection = DriverManager.getConnection(url, username, password);
 			System.out.println("Conexión establecida");
 			stmt = connection.createStatement();
-			
-			rs = stmt.executeQuery("SELECT * FROM TB_FACILITIES");
-			while (rs.next()) {
-				System.out.println(rs.getLong("id"));
-				System.out.println(rs.getInt("guid"));
-				System.out.println(rs.getString("name"));
-				System.out.println(rs.getString("description"));
-				System.out.println(rs.getString("category"));
-				System.out.println("===============================");
-            }		
 			
 		} catch (SQLException e) {
 			System.err.println("Ha habido un error "+e.getMessage());
