@@ -26,8 +26,9 @@ public class BibliotecaMain {
 
 	public static void main(String[] args) {
 		BibliotecaMain bibliotecaMain = new BibliotecaMain();
+		logger.info("prueba");
 		bibliotecaMain.inicio();
-	
+		
 	}
 
 	public void inicio () {
