@@ -1,16 +1,22 @@
 package es.curso.java.bbdd.ejercicios.bibliotecabbdd.entities;
 
 import java.sql.SQLException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+
 import java.util.Set;
 
 import es.curso.java.bbdd.ejercicios.bibliotecabbdd.dao.BibliotecaDAO;
 import es.curso.java.introduccion.utils.Utilidades;
 
 public class BibliotecaMain {
+	private static final Logger logger = LogManager.getLogger(BibliotecaMain.class);
+
 	private Map<Long,Biblioteca> mapBibliotecas;
 	
 	public BibliotecaMain() {
