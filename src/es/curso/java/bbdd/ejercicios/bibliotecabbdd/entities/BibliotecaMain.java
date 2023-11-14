@@ -37,18 +37,17 @@ public class BibliotecaMain {
 		
 	}
 	
-	public void cargarSubmenu(Biblioteca b) {   boolean salir = false;
+	public void cargarSubmenu(Biblioteca biblioElegida) {   boolean salir = false;
 
     while (!salir) {
-        int opcion = mostrarSubmenu();
+        int opcion = mostrarSubmenu(biblioElegida);
         switch (opcion) {
             case 1:
                 // Lógica para mostrar los libros de la biblioteca
-                mostrarLibrosDeBiblioteca(b);
+                mostrarLibrosDeBiblioteca(biblioElegida);
                 break;
             case 2:
                 // Lógica para realizar otras operaciones relacionadas con la biblioteca
-                realizarOtrasOperaciones(b);
                 break;
             case 3:
                 salir = true; // Salir del submenú
@@ -58,8 +57,8 @@ public class BibliotecaMain {
         }}
     }
     
-    public int mostrarSubmenu(Biblioteca b) {
-        System.out.println("Menú de opciones para la biblioteca " + b.getNombre() + ":");
+    public int mostrarSubmenu(Biblioteca biblioElegida) {
+        System.out.println("Menú de opciones para la biblioteca " + biblioElegida.getNombre() + ":");
         System.out.println("1. Mostrar libros de la biblioteca");
         System.out.println("2. Realizar otras operaciones relacionadas con la biblioteca");
         System.out.println("3. Salir");
@@ -68,13 +67,13 @@ public class BibliotecaMain {
     
 		
 	}
-    public void mostrarLibrosDeBiblioteca(Biblioteca b) {
-        List<Libro> libros = b.getLibros(); // Supongo que hay un método en la clase 'Biblioteca' para obtener los libros.
+    public void mostrarLibrosDeBiblioteca(Biblioteca biblioElegida) {
+        List<Libro> libros = biblioElegida.getLibros(); // Supongo que hay un método en la clase 'Biblioteca' para obtener los libros.
 
         if (libros.isEmpty()) {
             System.out.println("No hay libros disponibles en esta biblioteca.");
         } else {
-            System.out.println("Libros disponibles en la biblioteca " + b.getNombre() + ":");
+            System.out.println("Libros disponibles en la biblioteca " + biblioElegida.getNombre() + ":");
             for (Libro libro : libros) {
                 System.out.println("Título: " + libro.getTitulo());
                 System.out.println("Autor: " + libro.getAutor());

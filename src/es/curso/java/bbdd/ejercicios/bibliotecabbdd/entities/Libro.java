@@ -41,7 +41,7 @@ public class Libro {
 		super();
 		this.titulo = titulo;
 		this.autor = autor;
-		ISBN = iSBN;
+		ISBN = ISBN;
 		this.num_copias = num_copias;
 		this.id = id;
 	}
