@@ -5,7 +5,7 @@ public class Alumno {
 	String nombre;
 	String apellidos;
 	int nota;
-
+    boolean vip;
 	public Alumno() {
 
 	}
@@ -21,6 +21,18 @@ public class Alumno {
 		this.apellidos = apellidos;
 		this.nota = nota;
 	}
+	public Alumno(String dni2, String nombre2, String apellidos2, double nota2, boolean isVip) {
+		// TODO Auto-generated constructor stub
+		this.dni=dni;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.nota = nota;
+		if (this.nota>9) {
+			boolean vip = true;
+		}
+		
+	}
+
 	@Override
 	public String toString() {
 		return "Alumno [dni=" + dni + ", nombre=" + nombre + ", apellidos=" + apellidos + "]";

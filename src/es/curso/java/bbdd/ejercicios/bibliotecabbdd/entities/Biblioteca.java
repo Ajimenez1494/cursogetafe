@@ -2,16 +2,18 @@ package es.curso.java.bbdd.ejercicios.bibliotecabbdd.entities;
 
 import java.util.List;
 
+import poo.ejercicios.Direccion;
+
 public class Biblioteca {
 	private long id;
 	private String nombre;
 	private Direccion direccion;
 	
-	public Biblioteca(long id, String nombre, Direccion direccion) {
+	public Biblioteca(long id, String nombre, Direccion direccion2) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.direccion = direccion;
+		this.direccion = direccion2;
 	}
 	/**
 	 * @return the id
