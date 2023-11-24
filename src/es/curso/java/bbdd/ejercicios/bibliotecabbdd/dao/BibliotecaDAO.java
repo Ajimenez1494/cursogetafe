@@ -38,9 +38,9 @@ import es.curso.java.bbdd.ejercicios.bibliotecabbdd.entities.Direccion;
 				String localidad=rs.getString("dir.localidad");
 
 				Direccion dire = new Direccion(idDire, nombre, numero, codPostal, localidad);
-				Biblioteca biblio = new Biblioteca(idBiblioteca, nombreBiblioteca, dire);
+			//	Biblioteca biblio = new Biblioteca(idBiblioteca, nombreBiblioteca, dire);
 				
-				bibliotecas.add(biblio);
+			//	bibliotecas.add(biblio);
 			}
 			
 			return bibliotecas;
