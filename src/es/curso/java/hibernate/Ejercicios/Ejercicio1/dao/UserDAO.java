@@ -1,5 +1,9 @@
 package es.curso.java.hibernate.Ejercicios.Ejercicio1.dao;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -60,5 +64,34 @@ public class UserDAO {
 		usuarios=query.getResultList();
 		
 		return usuarios;}
+	
+	public void insertarUsuario (UserEntity user, EntityManager em) {
+		 
+		em.getTransaction().begin();
+		 try {
+			 em.persist(user);
+			 
+			 em.getTransaction().commit();
+		 }catch(Exception e) {
+			 em.getTransaction().rollback();
+		 }
+	     
+	}
+	public void crearArchivo(String nombre, UserEntity user) {
+		File archivo = new File(nombre);
+		try (BufferedWriter buffer = new BufferedWriter(new FileWriter(archivo, false))) {
 
-}
+			buffer.append(user.getId()+";")
+				.append(user.getNombre()+";")
+				.append(user.getApellidos()+";")
+			    .append(user.getFechaAlta()+";");
+
+			// buffer.close();
+			System.out.println("El archivo se ha creado con éxito!");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+
+
+}}

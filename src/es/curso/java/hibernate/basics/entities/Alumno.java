@@ -21,7 +21,7 @@ public class Alumno {
 	@Column(length = 9, name = "DNI_ALUMNO", unique = true)
 	private String dni;
 	
-	private String user;
+	private String usuario;
 	
 	@Transient
 	private int edad;
@@ -30,32 +30,32 @@ public class Alumno {
 		super();
 	}
 
-	public Alumno(Long id, String nombre, String apellidos, String dni, String user, int edad) {
+	public Alumno(Long id, String nombre, String apellidos, String dni, String usuario, int edad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
-		this.user = user;
+		this.usuario = usuario;
 		this.edad = edad;
 	}
 
 
-	public Alumno(String nombre, String apellidos, String dni, String user) {
+	public Alumno(String nombre, String apellidos, String dni, String usuario) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
-		this.user = user;
+		this.usuario = usuario;
 	}
 
-	public Alumno(Long id, String nombre, String apellidos, String dni, String user) {
+	public Alumno(Long id, String nombre, String apellidos, String dni, String usuario) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
-		this.user = user;
+		this.usuario = usuario;
 	}
 
 	public String getNombre() {
@@ -81,11 +81,11 @@ public class Alumno {
 		this.dni = dni;
 	}
 
-	public String getUser() {
-		return user;
+	public String getUsuario() {
+		return usuario;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	
@@ -107,8 +107,8 @@ public class Alumno {
 
 	@Override
 	public String toString() {
-		return "Alumno [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", user="
-				+ user + "]";
+		return "Alumno [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", usuario="
+				+ usuario + "]";
 	}
 	
 }
