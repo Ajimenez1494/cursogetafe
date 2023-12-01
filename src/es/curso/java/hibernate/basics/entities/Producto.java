@@ -29,12 +29,12 @@ private int unidades;
 private double precio;
 
 @Column( name = "FECHA_ALTA")
-private LocalDate fechaAlta;
+private Date fechaAlta;
 
 
 
 
-public Producto(Long id, String nombre, String tipo, int unidades, double precio, LocalDate fechaAlta) {
+public Producto(Long id, String nombre, String tipo, int unidades, double precio, Date fechaAlta) {
 	super();
 	this.id = id;
 	this.nombre = nombre;
@@ -68,10 +68,10 @@ public double getPrecio() {
 public void setPrecio(double precio) {
 	this.precio = precio;
 }
-public LocalDate getFechaAlta() {
+public Date getFechaAlta() {
 	return fechaAlta;
 }
-public void setFechaAlta(LocalDate fechaAlta) {
+public void setFechaAlta(Date fechaAlta) {
 	this.fechaAlta = fechaAlta;
 }
 public String getTipo() {
